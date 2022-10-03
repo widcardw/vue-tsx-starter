@@ -7,11 +7,18 @@ import vueJsx from '@vitejs/plugin-vue-jsx'
 import Pages from 'vite-plugin-pages'
 import Layouts from 'vite-plugin-vue-layouts'
 import { VitePWA } from 'vite-plugin-pwa'
+import generateSitemap from 'vite-ssg-sitemap'
 
 import Unocss from 'unocss/vite'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  resolve: {
+    alias: {
+      '~/': `${path.resolve(__dirname, 'src')}/`,
+    },
+  },
+
   plugins: [
     vue(),
     vueJsx(),
@@ -24,16 +31,24 @@ export default defineConfig({
     }),
     VitePWA(),
   ],
-  resolve: {
-    alias: {
-      '~/': `${path.resolve(__dirname, 'src')}/`,
-    },
-  },
+
   // https://github.com/vitest-dev/vitest
   test: {
+    include: ['test/**/*.test.ts'],
     environment: 'jsdom',
     transformMode: {
       web: [/\.[jt]sx$/],
     },
+  },
+
+  // https://github.com/antfu/vite-ssg
+  ssgOptions: {
+    script: 'async',
+    formatting: 'minify',
+    onFinished() { generateSitemap() },
+  },
+
+  ssr: {
+    noExternal: ['workbox-window'],
   },
 })
