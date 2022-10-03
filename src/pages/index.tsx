@@ -5,16 +5,18 @@ meta:
   layout: home
 */
 
-// Change layout by adding a block comment started with `route`
+// Change frontmatter by adding a block comment that starts with `route`
 // https://github.com/hannoeru/vite-plugin-pages#jsxtsx-yaml-format-comments-for-route-datain-vue
 
 import { defineComponent, ref } from 'vue'
 import { useRouter } from 'vue-router'
+import { useUserStore } from '~/store/user'
 
 export default defineComponent({
   setup() {
     const router = useRouter()
-    const name = ref('')
+    const user = useUserStore()
+    const name = ref(user.savedName)
     const go = () => {
       if (name.value.trim())
         router.push(`/hi/${encodeURIComponent(name.value)}`)
