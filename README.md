@@ -1,6 +1,6 @@
 # Vue Tsx Template
 
-Inspired by [antfu/vitesse-lite](https://github.com/antfu/vitesse-lite)
+Inspired by [antfu/vitesse](https://github.com/antfu/vitesse)
 
 ## Features
 
@@ -17,11 +17,11 @@ Inspired by [antfu/vitesse-lite](https://github.com/antfu/vitesse-lite)
 - [x] PWA
 - [x] Pinia
 - [x] NProgress
+- [x] Vite-plugin-vue-layouts
 
 ### TODO
 
 - [ ] Unocss attributify (tsx warns when using attributes that a html element does not have)
-- [ ] Vite-plugin-vue-layouts
 
 ## Pre-packed
 
@@ -46,7 +46,7 @@ Inspired by [antfu/vitesse-lite](https://github.com/antfu/vitesse-lite)
 ### Clone to local
 
 ```sh
-npx degit widcardw/vue-tsx-template my-project
+npx degit widcardw/vue-tsx-starter my-project
 cd my-project
 pnpm i
 ```
