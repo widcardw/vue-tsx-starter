@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite-ssg build",
     "typecheck": "vue-tsc --noEmit",
     "lint": "eslint .",
     "serve": "vite preview",
