@@ -1,4 +1,5 @@
 /// <reference types="vitest" />
+/// <reference types="vite-ssg" />
 
 import path from 'path'
 import { defineConfig } from 'vite'
