@@ -2,6 +2,7 @@
 /// <reference types="vite-ssg" />
 
 import path from 'path'
+import type { PluginOption } from 'vite'
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
@@ -9,6 +10,9 @@ import Pages from 'vite-plugin-pages'
 import Layouts from 'vite-plugin-vue-layouts'
 import { VitePWA } from 'vite-plugin-pwa'
 import generateSitemap from 'vite-ssg-sitemap'
+
+import mdx from '@mdx-js/rollup'
+import rehypePrism from 'rehype-prism-plus'
 
 import Unocss from 'unocss/vite'
 
@@ -22,15 +26,30 @@ export default defineConfig({
 
   plugins: [
     vue(),
-    vueJsx(),
-    Unocss(),
-    Pages({
-      extensions: ['ts', 'js', 'tsx', 'jsx'],
+
+    // mdx plugin should be put here before jsx plugin
+    mdx({
+      jsx: true,
+      rehypePlugins: [rehypePrism],
+    }) as PluginOption,
+
+    // transform jsx files after mdx transforms markdown(X) files
+    vueJsx({
+      include: [/\.[jt]sx$/, /\.mdx?$/],
     }),
+
+    Unocss(),
+
+    Pages({
+      extensions: ['ts', 'js', 'tsx', 'jsx', 'mdx', 'md'],
+    }),
+
     Layouts({
       extensions: ['ts', 'js', 'tsx', 'jsx'],
     }),
+
     VitePWA(),
+
   ],
 
   // https://github.com/vitest-dev/vitest

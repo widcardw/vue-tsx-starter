@@ -1,0 +1,84 @@
+{/*
+route
+
+meta:
+  layout: article
+*/}
+
+import { ref } from 'vue'
+import Counter from '~/components/Counter.tsx'
+
+export const count = ref(1)
+export const Button = (
+  <button onClick={() => count.value++}>
+    Click me!
+  </button>
+)
+
+# Welcome to MDX!
+
+You can write more extensible things in MDX!
+
+## Define components within mdx file
+
+```tsx
+import { ref } from 'vue'
+
+export const count = ref(1)
+export const Button = (
+  <button onClick={() => count.value++}>
+    Click me!
+  </button>
+)
+```
+
+```md
+I am {count.value}, <Button /> to increase!
+```
+
+I am {count.value}, <Button /> to increase!
+
+## Import components from other places
+
+You can also import components here.
+
+```ts
+import Counter from '~/components/Counter.tsx'
+
+<Counter initValue={100} />
+```
+
+<Counter initValue={100} />
+
+## Plugins
+
+You can add other plugins in `vite.config.ts`.
+
+```ts
+export default defineConfig({
+  // ...
+  plugins: [
+    // ...
+    mdx({
+      jsx: true,
+      rehypePlugins: [rehypePrism, /* add any other rehype plugins here */],
+    }) as PluginOption,
+  ],
+  // ...
+})
+```
+
+Code highlighting is driven by `rehype-prism-plus` plugin.
+
+## Layout
+
+You can change the layout of page by adding a comment at the beginning of the mdx file.
+
+```tsx
+{/*
+route
+
+meta:
+  layout: article
+*/}
+```

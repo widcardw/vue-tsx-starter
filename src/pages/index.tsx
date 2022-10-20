@@ -9,7 +9,7 @@ meta:
 // https://github.com/hannoeru/vite-plugin-pages#jsxtsx-yaml-format-comments-for-route-datain-vue
 
 import { defineComponent, ref } from 'vue'
-import { useRouter } from 'vue-router'
+import { RouterLink, useRouter } from 'vue-router'
 import { useUserStore } from '~/store/user'
 
 export default defineComponent({
@@ -53,6 +53,7 @@ export default defineComponent({
             Go
           </button>
         </div>
+        <RouterLink to='/mdx'>Try MDX!</RouterLink>
       </>
     )
   },

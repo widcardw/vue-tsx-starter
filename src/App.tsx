@@ -22,14 +22,17 @@ export default defineComponent({
         <main
           class={[
             'font-sans',
-            'px-4 py-10',
             'text-center',
+            'mx-a max-w-45rem',
+            'px-4 py-10',
             'text-gray-700',
             'dark:text-gray-200',
           ]}
         >
           <RouterView />
-          <ToggleDark />
+          <div class="text-center">
+            <ToggleDark />
+          </div>
         </main>
       </>
     )

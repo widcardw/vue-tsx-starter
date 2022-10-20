@@ -6,6 +6,7 @@ import type { UserModule } from './types'
 import App from './App'
 import 'uno.css'
 import './styles/main.css'
+import './styles/md.css'
 
 const routes = setupLayouts(generatedRoutes)
 
