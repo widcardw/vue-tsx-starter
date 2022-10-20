@@ -30,7 +30,7 @@ export default defineConfig({
     // mdx plugin should be put here before jsx plugin
     mdx({
       jsx: true,
-      rehypePlugins: [rehypePrism],
+      rehypePlugins: [rehypePrism], // <-- You can add other rehype plugins here
     }) as PluginOption,
 
     // transform jsx files after mdx transforms markdown(X) files

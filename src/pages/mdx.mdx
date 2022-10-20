@@ -9,9 +9,9 @@ import { ref } from 'vue'
 import Counter from '~/components/Counter.tsx'
 
 export const count = ref(1)
-export const Button = (
+export const Button = () => (
   <button onClick={() => count.value++}>
-    Click me!
+    Click me {count.value}
   </button>
 )
 
@@ -21,13 +21,13 @@ You can write more extensible things in MDX!
 
 ## Define components within mdx file
 
-```tsx
+```tsx {4-8} showLineNumbers
 import { ref } from 'vue'
 
 export const count = ref(1)
-export const Button = (
+export const Button = () => (
   <button onClick={() => count.value++}>
-    Click me!
+    Click me {count.value}
   </button>
 )
 ```
@@ -37,6 +37,18 @@ I am {count.value}, <Button /> to increase!
 ```
 
 I am {count.value}, <Button /> to increase!
+
+Note that the `Button` component should be defined as **a function that returns a JSX element**, 
+otherwise the variables would not be _reactive_. 
+
+```diff
+- export const Button = (
++ export const Button = () => (
+    <button onClick={() => count.value++}>
+      Click me {count.value}
+    </button>
+  )
+```
 
 ## Import components from other places
 
@@ -82,3 +94,7 @@ meta:
   layout: article
 */}
 ```
+
+import { RouterLink } from 'vue-router'
+
+<RouterLink to="/" class="op-80">back</RouterLink>
