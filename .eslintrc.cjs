@@ -4,7 +4,7 @@ module.exports = {
   ],
   extends: [
     '@antfu',
-    'plugin:react/recommended',
+    'plugin:react/jsx-runtime',
   ],
   parserOptions: {
     ecmaFeatures: {
