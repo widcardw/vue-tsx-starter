@@ -2,19 +2,17 @@
 /// <reference types="vite-ssg" />
 
 import path from 'path'
-import type { PluginOption } from 'vite'
 import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import Pages from 'vite-plugin-pages'
 import Layouts from 'vite-plugin-vue-layouts'
 import { VitePWA } from 'vite-plugin-pwa'
 import generateSitemap from 'vite-ssg-sitemap'
 
-import mdx from '@mdx-js/rollup'
 import rehypePrism from 'rehype-prism-plus'
 
 import Unocss from 'unocss/vite'
+import mdx from 'vite-plugin-vue3-mdx'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -25,13 +23,13 @@ export default defineConfig({
   },
 
   plugins: [
-    vue(),
+    // vue(),
 
     // mdx plugin should be put here before jsx plugin
     mdx({
       jsx: true,
       rehypePlugins: [rehypePrism], // <-- You can add other rehype plugins here
-    }) as PluginOption,
+    }), // as PluginOption,
 
     // transform jsx files after mdx transforms markdown(X) files
     vueJsx({

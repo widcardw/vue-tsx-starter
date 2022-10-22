@@ -11,7 +11,6 @@
     "test": "vitest"
   },
   "dependencies": {
-    "@mdx-js/rollup": "^2.1.5",
     "@vueuse/core": "^9.2.0",
     "@vueuse/head": "^0.8.0",
     "nprogress": "^0.2.0",
@@ -43,6 +42,7 @@
     "vite-plugin-pages": "^0.26.0",
     "vite-plugin-pwa": "^0.13.1",
     "vite-plugin-vue-layouts": "^0.7.0",
+    "vite-plugin-vue3-mdx": "^0.0.5",
     "vite-ssg": "^0.20.2",
     "vite-ssg-sitemap": "^0.4.3",
     "vitest": "^0.23.4",
