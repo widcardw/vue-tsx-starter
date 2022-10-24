@@ -1,20 +1,55 @@
-:root {
-  --prism-font-family: 'PT Mono', 'DM Mono', 'Courier New', Courier, monospace;
-  --prism-font-size: 14px;
-}
-
 pre > code {
   display: grid;
 }
 
-@media (prefers-color-scheme: dark) {
-  pre[data-theme='light'], code[data-theme='light'] {
-    display: none;
-  }
+pre, code {
+  font-family: 'PT Mono', monospace;
+  font-size: 14px;
+}
+
+/* dark */
+.dark pre[data-theme='light'], .dark code[data-theme='light'], .dark div[data-theme='light'] {
+  display: none;
+}
+
+/* light */
+html:not(.dark) pre[data-theme='dark'], html:not(.dark) code[data-theme='dark'], html:not(.dark) div[data-theme='dark'] {
+  display: none;
+}
+
+code[data-line-numbers] {
+  counter-reset: line;
 }
  
-@media (prefers-color-scheme: light), (prefers-color-scheme: no-preference) {
-  pre[data-theme='dark'], code[data-theme='dark'] {
-    display: none;
-  }
+code[data-line-numbers] > .line::before {
+  counter-increment: line;
+  content: counter(line);
+ 
+  /* Other styling */
+  display: inline-block;
+  width: 1rem;
+  margin-right: 1.5rem;
+  text-align: right;
+  color: #7f7f7f50;
+}
+
+code > .line.highlighted {
+  background-color: #7f7f7f14;
+  margin: 0 -1rem;
+  padding: 0 1rem;
+}
+
+code > .line > .highlighted {
+  background-color: #7f7f7f14;
+}
+
+pre[data-language] {
+  margin: 0;
+}
+
+div[data-rehype-pretty-code-fragment] {
+  padding: 1rem 1rem;
+  margin: 0.5rem 0;
+  border-radius: 0.375rem;
+  background-color: #7f7f7f10;
 }

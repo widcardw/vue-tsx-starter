@@ -21,7 +21,7 @@ You can write more extensible things in MDX!
 
 ## Define components within mdx file
 
-```tsx {4-8} showLineNumbers
+```tsx {4-8}
 import { ref } from 'vue'
 
 export const count = ref(1)
@@ -30,9 +30,7 @@ export const Button = () => (
     Click me {count.value}
   </button>
 )
-```
 
-```md
 I am {count.value}, <Button /> to increase!
 ```
 
