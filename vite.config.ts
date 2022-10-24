@@ -9,7 +9,7 @@ import Layouts from 'vite-plugin-vue-layouts'
 import { VitePWA } from 'vite-plugin-pwa'
 import generateSitemap from 'vite-ssg-sitemap'
 
-import rehypePrism from 'rehype-prism-plus'
+import rehypePrettyCode from 'rehype-pretty-code'
 
 import Unocss from 'unocss/vite'
 import mdx from 'vite-plugin-vue3-mdx'
@@ -25,15 +25,17 @@ export default defineConfig({
   plugins: [
     // vue(),
 
-    // mdx plugin should be put here before jsx plugin
-    mdx({
-      jsx: true,
-      rehypePlugins: [rehypePrism], // <-- You can add other rehype plugins here
-    }), // as PluginOption,
-
-    // transform jsx files after mdx transforms markdown(X) files
     vueJsx({
       include: [/\.[jt]sx$/, /\.mdx?$/],
+    }),
+
+    mdx({
+      rehypePlugins: [
+        [
+          rehypePrettyCode,
+          { theme: { dark: 'vitesse-dark', light: 'vitesse-light' } },
+        ],
+      ], // <-- You can add other rehype plugins here
     }),
 
     Unocss(),
