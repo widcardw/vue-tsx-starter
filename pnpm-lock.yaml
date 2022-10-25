@@ -1,7 +1,6 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@antfu/eslint-config': ^0.27.0
   '@iconify-json/ri': ^1.1.3
   '@types/node': ^18.7.21
   '@types/nprogress': ^0.2.0
@@ -11,8 +10,8 @@ specifiers:
   '@vue/test-utils': ^2.0.2
   '@vueuse/core': ^9.2.0
   '@vueuse/head': ^0.8.0
+  '@widcardw/eslint-config': ^0.0.1
   eslint: ^8.24.0
-  eslint-plugin-react: ^7.31.8
   jsdom: ^20.0.0
   nprogress: ^0.2.0
   pinia: ^2.0.22
@@ -42,7 +41,6 @@ dependencies:
   vue-router: 4.1.5_vue@3.2.39
 
 devDependencies:
-  '@antfu/eslint-config': 0.27.0_7ilbxdl5iguzcjriqqcg2m5cku
   '@iconify-json/ri': 1.1.3
   '@types/node': 18.7.21
   '@types/nprogress': 0.2.0
@@ -50,8 +48,8 @@ devDependencies:
   '@vitejs/plugin-vue-jsx': 2.0.1_vite@3.1.3+vue@3.2.39
   '@vue/compiler-sfc': 3.2.39
   '@vue/test-utils': 2.0.2_vue@3.2.39
+  '@widcardw/eslint-config': 0.0.1_7ilbxdl5iguzcjriqqcg2m5cku
   eslint: 8.24.0
-  eslint-plugin-react: 7.31.8_eslint@8.24.0
   jsdom: 20.0.0
   pnpm: 7.12.2
   rehype-pretty-code: 0.4.0_shiki@0.11.1
@@ -2183,6 +2181,21 @@ packages:
     transitivePeerDependencies:
       - '@vue/composition-api'
       - vue
+
+  /@widcardw/eslint-config/0.0.1_7ilbxdl5iguzcjriqqcg2m5cku:
+    resolution: {integrity: sha512-DK5kvbX/kt/HaWSfrBVWXAG1OEwMD1CMtEWyZA6gm+PgtmdDFEEohAgw/hReImEMijuJU89RrwS+gxhFKrbL6A==}
+    peerDependencies:
+      eslint: '>=7.4.0'
+    dependencies:
+      '@antfu/eslint-config': 0.27.0_7ilbxdl5iguzcjriqqcg2m5cku
+      eslint: 8.24.0
+      eslint-plugin-react: 7.31.8_eslint@8.24.0
+    transitivePeerDependencies:
+      - eslint-import-resolver-typescript
+      - eslint-import-resolver-webpack
+      - supports-color
+      - typescript
+    dev: true
 
   /@zhead/schema-vue/0.7.4_vue@3.2.39:
     resolution: {integrity: sha512-Q7wPUly3ZWbPYQ5SEJBUuD6Mw3wiUfPMPquGfqsR2KF6sxQKRF8oaHnRLuu2uxpjuXjkzpBlZBPu1JgQX+Lf6Q==}
