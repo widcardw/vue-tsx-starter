@@ -2,6 +2,8 @@
 
 Inspired by [antfu/vitesse](https://github.com/antfu/vitesse)
 
+> However, this template repo may contain bugs. If you are annoyed with them, you can turn to [Astro](https://astro.build).
+
 ## Features
 
 ### DONE
@@ -19,12 +21,12 @@ Inspired by [antfu/vitesse](https://github.com/antfu/vitesse)
 - [x] Pinia
 - [x] NProgress
 - [x] Vite-plugin-vue-layouts
+- [x] MDX support
 
 ### TODO
 
 - [ ] Unocss attributify (tsx warns when using attributes that a html element does not have)
 - [ ] i18n
-- [ ] **MDX** or **markdown it**? Please vote in issue!
 
 ## Pre-packed
 
