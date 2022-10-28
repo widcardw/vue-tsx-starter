@@ -71,14 +71,14 @@ export default defineConfig({
     // ...
     mdx({
       jsx: true,
-      rehypePlugins: [rehypePrism, /* add any other rehype plugins here */],
+      rehypePlugins: [rehypePrettyCode, /* add any other rehype plugins here */],
     }) as PluginOption,
   ],
   // ...
 })
 ```
 
-Code highlighting is driven by `rehype-prism-plus` plugin.
+Code highlighting is driven by [`rehype-pretty-code`](https://rehype-pretty-code.netlify.app/) plugin, which is based on [Shiki](https://github.com/shikijs/shiki).
 
 ## Layout
 

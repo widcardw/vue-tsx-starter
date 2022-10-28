@@ -3,8 +3,15 @@ pre > code {
 }
 
 pre, code {
-  font-family: 'PT Mono', monospace;
+  font-family: 'DM Mono', monospace;
   font-size: 14px;
+}
+
+/* inline code background */
+:not(pre) > code {
+  padding: 0.125rem 0.25rem;
+  border-radius: 0.25rem;
+  background-color: #7f7f7f10;
 }
 
 /* dark */
@@ -47,6 +54,7 @@ pre[data-language] {
   margin: 0;
 }
 
+/* code block background */
 div[data-rehype-pretty-code-fragment] {
   padding: 1rem 1rem;
   margin: 0.5rem 0;
